@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <!--    <data>-->
+    <!--        <variable name="obj" type="com.example.loginwithkoin.MultiSearchViewModel"/>-->
+    <!--    </data>-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar_ayout"></include>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="@string/search"
+                android:theme="@style/CustomMaterialEditText"
+                app:boxStrokeColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvTitleMovies"
+                style="@style/MyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMiviesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvTitleTv"
+                style="@style/MyTextView"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTvList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvTitleOthers"
+                style="@style/MyTextView"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOthersList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvNoSearchResults"
+                style="@style/MyTextView"
+                android:textAlignment="center"
+                android:text="Search a Movie, Tv Show or Person"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

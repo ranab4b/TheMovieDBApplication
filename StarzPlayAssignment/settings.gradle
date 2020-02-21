@@ -1,0 +1,2 @@
+include ':app', ':restapistarzplaymodule'
+rootProject.name='StarzPlayAssignment'

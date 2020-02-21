@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def futures_version = "1.0.0-alpha03"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-rx2', version: '1.1.1'
+    implementation "org.koin:koin-androidx-scope:1.0.2"
+
+    implementation 'org.koin:koin-androidx-viewmodel:1.0.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.0'
+    implementation "androidx.concurrent:concurrent-futures:$futures_version"
+}
